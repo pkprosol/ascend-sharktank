@@ -1,31 +1,37 @@
-# ASCEND Shark Tank Landing Page
+# Barracuda Tank — ASCEND 2027
 
-Static landing page for the ASCEND Shark Tank — held at the ASCEND Agency Growth & Leadership Summit 2026, Music City Center, Nashville, TN, June 8–11, 2026 (exact pitch slot TBD within program).
+Static landing page for the Barracuda Tank at **ASCEND**, the conference for independent
+benefits agencies and producers: **January 19, 2027**, inside ASCEND's Jan 18–21, 2027 program
+at the San Diego Convention Center (attendascend.com).
 
-Cloned from `sharktank-nabip` per the "fill-in-the-blanks" approach Al outlined — same format, same prize structure, same Stripe payment link, just retargeted to the ASCEND audience.
+Terms are Al Lewis's, 2026-10-23: "should look just like HBCH except $5000 entry fee,
+$12,500 investment or $25,000 in Quizzify … conference date is January 19th. Judges can't be
+named because they aren't set yet."
+
+| | ASCEND 2027 | (Houston/HBCH, for reference) |
+|---|---|---|
+| Headline | $25,000 at stake | $50,000 at stake |
+| Entry fee | $5,000 | $10,000 |
+| Audience | 200 benefits advisors | 150–200 employers |
+| Winner picks one | $12,500 investment / $5,000 cash / $25,000 Quizzify services (incl. ER Consent) | $25K / $10K / $50K |
+| Judges | Four leading advisors (not yet named) | 3 employers + 1 consultant |
+| Contestants | 5 | 5 |
 
 ## Wired
 
-- **Stripe payment link** (entry fee, $10,000): `https://buy.stripe.com/4gM3cw4rk84lf4v6Tq57W0K` (ASCEND-specific link)
-- All "Apply to Compete" CTAs route directly to Stripe checkout.
-- `SPOTS_REMAINING` env var controls the live scarcity counter in the top banner (default `5`).
+- **Stripe payment link** (entry fee, $5,000): `https://buy.stripe.com/9B69AUe1U3O52hJ5Pm57W0M`
+  - Product `prod_VUp1UZVFIIc2Ul`, price `price_1UTpNAJlOcMZLcnPN2ZtfMyK`, Quizzify account `acct_18lgiuJlOcMZLcnP`.
+  - Supersedes the $10,000 ASCEND-2026-Nashville link `plink_1TTVDcJlOcMZLcnPON0tS1TF`.
+- Both "Reserve Your Spot" CTAs route to that link.
+- `SPOTS_REMAINING` env var drives the scarcity counter (default `5`); `build.sh` substitutes it.
 
-## TBD before final launch
+## Open
 
-Search `public/index.html` for `TBD:` to find every deferred item:
+- Judging panel: four advisors, to be named here once set.
+- Application deadline — recommend ~3 weeks out (mid-December 2026).
+- Exact time slot within the Jan 19 program, and the room at the San Diego Convention Center.
 
-- Final panel of judges beyond Al Lewis
-- Application deadline date (recommend ~3 weeks pre-event, e.g., mid-May 2026)
-- Date and time slot for the pitch within the ASCEND June 8–11 program
-- Specific room / area within Music City Center, Nashville
+## Deploy
 
-## Updating the spots counter
-
-Edit `SPOTS_REMAINING` in `render.yaml` (or the value in the Render dashboard env vars), then redeploy. `build.sh` substitutes the value into the page at build time.
-
-## Deploy to Render
-
-1. Push this repo to GitHub.
-2. In Render dashboard → **New** → **Static Site**, connect the repo.
-3. Render auto-detects `render.yaml`. Publish directory is `./public`.
-4. Custom domain: point DNS (e.g. `ascend-sharktank.validationinstitute.com`) to Render per their docs.
+Render static site `ascend-sharktank` (Quizzify workspace), auto-deploys on push to `main`.
+Live at https://ascend-sharktank.validationinstitute.com
