@@ -1,3 +1,7 @@
+> **Moved. Do not edit this repo.**
+> This page now lives in **[Quizzify/barracuda-tank](https://github.com/Quizzify/barracuda-tank)** as `sites/ascend/`, and is still served at https://ascend-sharktank.validationinstitute.com/ from that repo.
+> Kept for history only; its Render service no longer builds from here.
+
 # Barracuda Tank — ASCEND 2027
 
 Static landing page for the Barracuda Tank at **ASCEND**, the conference for independent
